@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitaire Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="top-section">
+            <div class="deck-and-waste">
+                <div class="deck" id="deck"></div>
+                <div class="waste" id="waste"></div>
+            </div>
+            <div class="foundations">
+                <div class="foundation" data-suit="hearts"></div>
+                <div class="foundation" data-suit="diamonds"></div>
+                <div class="foundation" data-suit="clubs"></div>
+                <div class="foundation" data-suit="spades"></div>
+            </div>
+        </div>
+        <div class="tableau">
+            <div class="tableau-pile" id="tableau-0"></div>
+            <div class="tableau-pile" id="tableau-1"></div>
+            <div class="tableau-pile" id="tableau-2"></div>
+            <div class="tableau-pile" id="tableau-3"></div>
+            <div class="tableau-pile" id="tableau-4"></div>
+            <div class="tableau-pile" id="tableau-5"></div>
+            <div class="tableau-pile" id="tableau-6"></div>
+        </div>
+    </div>
+    <div class="game-controls">
+        <button onclick="newGame()">New Game</button>
+        <button onclick="alert(game.getHint())">Get Hint</button>
+    </div>
+    <div class="toggle-buttons">
+        <button class="toggle-button" id="progress-toggle">
+            <span class="toggle-icon">📊</span>
+            Progress
+        </button>
+        <button class="toggle-button" id="points-toggle">
+            <span class="toggle-icon">🏆</span>
+            Points
+        </button>
+        <button class="toggle-button" id="missions-toggle">
+            <span class="toggle-icon">📋</span>
+            Missions
+        </button>
+    </div>
+    <div class="progress-container" id="progress-container">
+        <button class="close-button" id="close-progress">×</button>
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-text" id="progress-text">0%</div>
+    </div>
+    <div class="points-container" id="points-container">
+        <button class="close-button" id="close-points">×</button>
+        <div class="points">Points: <span id="points-display">0</span></div>
+        <div class="high-score">High Score: <span id="high-score-display">0</span></div>
+    </div>
+    <div class="missions-panel" id="missions-panel">
+        <div class="missions-header">
+            <h3>Daily Missions</h3>
+            <button class="close-missions" id="close-missions">×</button>
+            <div class="time-remaining" id="missions-timer">Next refresh in: 24:00:00</div>
+        </div>
+        <div class="missions-list" id="missions-list">
+            <!-- Missions will be populated here -->
+        </div>
+    </div>
+    <div class="win-message" id="win-message">
+        <h2>Congratulations!</h2>
+        <p>You've won the game!</p>
+        <button onclick="newGame()">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
